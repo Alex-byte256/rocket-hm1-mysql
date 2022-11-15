@@ -16,7 +16,7 @@ select c.* from bank.client c join bank.application a on c.idClient = a.Client_i
 
 select count(client.idClient) from bank.client 
 union  select count(c.idClient) from bank.client c join bank.department  d 
-on c.Department_idDepartment = d.idDepartment where c.City = 'Lviv' ;
+on c.Department_idDepartment = d.idDepartment where d.DepartmentCity = 'Lviv' ;
 
 select c.FirstName , c.LastName ,c.idClient , max(a.sum)  from bank.application a join bank.client c 
 on  c.idClient = a.Client_idClient group by c.FirstName , c.LastName , c.idClient;
